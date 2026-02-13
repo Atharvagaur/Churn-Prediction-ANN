@@ -60,7 +60,8 @@ input_data_scaled = scaler.transform(input_data)
 # Predict churn
 prediction = model.predict(input_data_scaled)
 prediction_proba = prediction[0][0]
-
+st.write("Input shape:", input_data.shape)
+st.write("Model expects:", model.input_shape)
 st.write(f'Churn Probability: {prediction_proba:.2f}')
 
 if prediction_proba > 0.5:
